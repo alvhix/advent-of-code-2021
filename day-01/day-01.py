@@ -1,4 +1,4 @@
-# Part 1: count increases from previous value (the first value does not have previous value)
+# part 1
 def count_increases(arr):
     counter = 0
     prev_element = None
@@ -12,6 +12,7 @@ def count_increases(arr):
     return counter
 
 
+# part 2
 def count_grouped_increases(arr):
     counter = 0
     sum_prev = None
@@ -31,6 +32,7 @@ def count_grouped_increases(arr):
 
 # setup
 file = open("input.txt", "r")
+# list of integers
 arr = [int(i) for i in file.read().split("\n")]
 file.close()
 
