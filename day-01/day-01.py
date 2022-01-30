@@ -12,9 +12,27 @@ def count_increases(arr):
     return counter
 
 
+def count_grouped_increases(arr):
+    counter = 0
+    sum_prev = None
+    sum_actual = None
+
+    for i in range(1, len(arr) - 1):
+
+        sum_actual = arr[i - 1] + arr[i] + arr[i + 1]
+
+        if sum_prev != None and sum_actual > sum_prev:
+            counter += 1
+
+        sum_prev = sum_actual
+
+    return counter
+
+
 # setup
 file = open("input.txt", "r")
 arr = [int(i) for i in file.read().split("\n")]
 file.close()
 
 print(count_increases(arr))
+print(count_grouped_increases(arr))
