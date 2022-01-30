@@ -13,6 +13,23 @@ def calculate_position(arr):
     return horizontal * depth
 
 
+# part 2
+def calculate_position_with_aim(arr):
+    horizontal = 0
+    depth = 0
+    aim = 0
+    for i in arr:
+        if i[0] == "forward":
+            horizontal += i[1]
+            depth += aim * i[1]
+        elif i[0] == "down":
+            aim += i[1]
+        elif i[0] == "up":
+            aim -= i[1]
+
+    return horizontal * depth
+
+
 # setup
 file = open("input.txt", "r")
 # list of lists of instruction (string) and value (integer)
@@ -23,3 +40,4 @@ for i in range(0, len(arr)):
 file.close()
 
 print(calculate_position(arr))
+print(calculate_position_with_aim(arr))
