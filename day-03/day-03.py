@@ -1,5 +1,3 @@
-from math import gamma
-
 # part 1
 def calculate_power_consumption(arr):
     gamma_rate = ""
@@ -34,7 +32,7 @@ def binary_to_decimal(binary):
 
 # setup
 file = open("input.txt", "r")
-# list of integers
+# list of strings
 arr = file.read().split("\n")
 file.close()
 
